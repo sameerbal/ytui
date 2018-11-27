@@ -1,0 +1,77 @@
+package rr;
+
+	import java.io.File;
+	import java.util.ArrayList;
+	import java.util.List;
+	import java.util.Scanner;
+
+	public class Compare {
+		
+		public static String arrayOfNames[];
+		public static void userInput()
+		{
+		Scanner scan = new Scanner(System.in);
+		String arrayOfNames[] = new String[Integer.parseInt(scan.nextLine())];
+		
+		for(int i = 0;i<arrayOfNames.length;i++)
+		{
+			System.out.print("Enter serial number of SQL " + (i + 1) + " : ");
+			arrayOfNames[i] = scan.nextLine();
+		}
+		}
+		System.out.println(arrayOfNames[i]);
+
+		public static String SourceFiles()
+		{
+		List<String> results = new ArrayList<String>();
+
+
+		File[] files = new File("C:\\Users\\rr44273\\Desktop\\SourceSqlFolder").listFiles();
+		//If this pathname does not denote a directory, then listFiles() returns null. 
+
+		for (File file : files) {
+		    if (file.isFile()) {
+		        results.add(file.getName());
+		    }
+		}
+		for(int i =0;i<arrayOfNames.length;i++)
+		{
+			for(int j=0;j<results.size();j++)
+			{
+				if(arrayOfNames[i].contains(results.get(j)));
+				{
+					return results.get(j);
+				}
+			}
+		}
+		}
+
+		public static String TargetFiles()
+		{
+		List<String> results = new ArrayList<String>();
+
+
+		File[] files = new File("C:\\Users\\rr44273\\Desktop\\SourceSqlFolder").listFiles();
+		//If this pathname does not denote a directory, then listFiles() returns null. 
+
+		for (File file : files) {
+		    if (file.isFile()) {
+		        results.add(file.getName());
+		    }
+		}
+		for(int i =0;i<arrayOfNames.length;i++)
+		{
+			for(int j=0;j<results.size();j++)
+			{
+				if(arrayOfNames[i].contains(results.get(j)));
+				{
+					return results.get(j);
+				}
+			}
+		}
+		}
+		}
+
+	}
+
+}
